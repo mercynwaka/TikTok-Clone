@@ -16,6 +16,7 @@ pipeline {
         stage('build image') {
             steps {
                echo 'building the docker image'
+               sh 'CI=false npm run build'
                sh "docker build -t $IMAGE_NAME ."
             }
         }
